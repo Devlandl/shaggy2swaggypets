@@ -133,9 +133,9 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6"
             >
-              Shaggy <span className="text-transparent bg-clip-text bg-gradient-to-r from-paw-gold via-yellow-300 to-paw-gold italic">2</span>{" "}
+              From Shaggy{" "}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-paw-gold via-yellow-300 to-paw-gold italic">Swaggy</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-paw-gold via-yellow-300 to-paw-gold italic">2 Swaggy</span>
             </motion.h1>
 
             <motion.p
