@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       .join(", ");
 
     const { error } = await resend.emails.send({
-      from: "Shaggy 2 Swaggy Quotes <quotes@shaggy2swaggy.com>",
+      from: "Shaggy 2 Swaggy Quotes <onboarding@resend.dev>",
       to: process.env.GROOMER_EMAIL || "shaggy2swaggypets@gmail.com",
       subject: `New Quote Request from ${customerName} for ${dogName}`,
       html: `
