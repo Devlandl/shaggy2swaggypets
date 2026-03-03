@@ -1,10 +1,17 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.warn("RESEND_API_KEY not set - skipping email notification");
+      return NextResponse.json({ success: true, skipped: true });
+    }
+
+    // Dynamic import to avoid build-time error when key is missing
+    const { Resend } = await import("resend");
+    const resend = new Resend(apiKey);
+
     const body = await req.json();
     const { customerName, email, phone, dogName, breed, weight, services, notes, photoUrl } = body;
 
